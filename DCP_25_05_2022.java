@@ -6,16 +6,18 @@ For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could bu
 
 public class maxprofit{
     public static int maxprofit(int arr[]){
-        int sum=0;
-         int n = arr.length;
-         for(int i =0; i< n;i++){
-             for(int j=i+1; j< n;j++){
-                     if(arr[j]-arr[i] >0 && sum < arr[j]-arr[i]){
-                        sum= arr[j]-arr[i];  
-                     
-                 }
-             }
-         }return sum;
+        
+        int buy = arr[0];
+        int profit = 0;
+         
+         for (int i=1;i<arr.length;i++) {
+             if(buy > arr[i])
+                  buy= arr[i];
+             if(profit < arr[i]-buy)
+                 profit= arr[i] -buy;
+    }
+    
+         return profit;
     }
      public static void main(String []args){
          int []arr = {9, 11, 8, 5, 7, 10};
