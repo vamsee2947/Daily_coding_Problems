@@ -1,3 +1,6 @@
+#The power set of a set is the set of all its subsets. Write a function that, given a set, generates its power set.
+
+
 def powerset(s):
     n=len(s)
     pow_set_size = 2**n
